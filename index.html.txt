@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Years | Our Digital Archive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;700;900&family=Plus+Jakarta+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C5A028;
+            --obsidian: #0A0A0A;
+            --card: #141414;
+        }
+
+        body {
+            background-color: var(--obsidian);
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .font-outfit { font-family: 'Outfit', sans-serif; }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #FBE7A1 50%, #C5A028 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Image Hover Effect */
+        .img-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .img-container img {
+            transition: transform 0.7s scale(1.1);
+            filter: grayscale(30%) contrast(110%);
+        }
+
+        .img-container:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%) contrast(100%);
+        }
+
+        .glass-card {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Custom Cursor for Desktop */
+        @media (min-width: 1024px) {
+            .custom-cursor {
+                width: 20px;
+                height: 20px;
+                border: 1px solid var(--gold);
+                border-radius: 50%;
+                position: fixed;
+                pointer-events: none;
+                z-index: 999;
+                transition: transform 0.1s ease;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="custom-cursor hidden lg:block" id="cursor"></div>
+
+    <!-- Progress Tracker -->
+    <div id="progress" class="fixed top-0 left-0 h-[2px] bg-gradient-to-r from-yellow-700 to-yellow-200 z-[100] transition-all duration-200"></div>
+
+    <!-- Background Noise/Glow -->
+    <div class="fixed inset-0 pointer-events-none opacity-20">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-yellow-900/20 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-yellow-700/10 blur-[120px] rounded-full"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full p-6 flex justify-between items-center z-50">
+        <div class="text-[10px] tracking-[0.4em] font-bold uppercase opacity-50">Volume II / Chapter 2025</div>
+        <div class="px-4 py-1 border border-white/10 rounded-full glass-card text-[10px] tracking-widest uppercase">
+            Since [YOUR DATE]
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex flex-col justify-center items-center px-6 overflow-hidden">
+        <div class="text-center z-10">
+            <h2 class="reveal text-sm tracking-[0.8em] text-gray-500 uppercase mb-6">A Digital Retrospective</h2>
+            <h1 class="reveal text-8xl md:text-[12rem] font-black leading-none tracking-tighter mb-4">
+                TWO <span class="gold-gradient italic font-light">YEARS</span>
+            </h1>
+            <p class="reveal max-w-lg mx-auto text-gray-400 font-light text-sm md:text-base leading-relaxed mb-12">
+                730 days of growth, grit, and the kind of partnership most people only write about. 
+                This is a tribute to us.
+            </p>
+            <div class="reveal">
+                <a href="#journey" class="group relative px-10 py-4 border border-yellow-600/30 text-yellow-500 text-xs tracking-[0.3em] uppercase transition-all hover:bg-yellow-600 hover:text-black">
+                    Enter Archive
+                </a>
+            </div>
+        </div>
+
+        <!-- Hero Background Image (Optional) -->
+        <div class="absolute inset-0 z-0 opacity-20">
+            <!-- REPLACE WITH YOUR FAVORITE COUPLE PHOTO -->
+            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover grayscale" alt="Background">
+        </div>
+    </section>
+
+    <!-- DATA & LOGIC SECTION -->
+    <section id="journey" class="py-32 px-6 md:px-24 grid grid-cols-1 md:grid-cols-3 gap-12 border-y border-white/5">
+        <div class="reveal">
+            <span class="text-yellow-600 font-bold text-5xl font-outfit">01</span>
+            <h3 class="text-xl font-bold mt-4 mb-2 italic">The Foundation</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Starting as two individuals and evolving into a powerhouse team. We didn't just fall in love; we built it.</p>
+        </div>
+        <div class="reveal" style="transition-delay: 0.2s;">
+            <span class="text-yellow-600 font-bold text-5xl font-outfit">02</span>
+            <h3 class="text-xl font-bold mt-4 mb-2 italic">The Resilience</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Year two taught us how to navigate the storms. Every challenge was just more data proving we work.</p>
+        </div>
+        <div class="reveal" style="transition-delay: 0.4s;">
+            <span class="text-yellow-600 font-bold text-5xl font-outfit">03</span>
+            <h3 class="text-xl font-bold mt-4 mb-2 italic">The Future</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">The roadmap ahead is wide open. More cities, more wins, more of this life we've designed together.</p>
+        </div>
+    </section>
+
+    <!-- THE BENTO PHOTO GALLERY -->
+    <section class="py-32 px-6 md:px-24 bg-[#050505]">
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold font-outfit uppercase tracking-tighter">The Visual <span class="gold-gradient">Logs</span></h2>
+            <p class="text-gray-500 text-sm">Snapshots of the last 24 months.</p>
+        </div>
+
+        <!-- Grid Container -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[250px] md:auto-rows-[300px]">
+            
+            <!-- Large Feature Image -->
+            <div class="md:col-span-2 md:row-span-2 rounded-3xl img-container reveal">
+                <!-- REPLACE WITH YOUR IMAGE -->
+                <img src="https://images.unsplash.com/photo-1516589174184-c68526614460?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover" alt="Memory 1">
+                <div class="absolute bottom-6 left-6 right-6">
+                    <p class="text-[10px] uppercase tracking-widest text-yellow-500 mb-2">Main Event</p>
+                    <h4 class="text-2xl font-bold">The Highlight of Year 2.</h4>
+                </div>
+            </div>
+
+            <!-- Vertical Image -->
+            <div class="md:row-span-2 rounded-3xl img-container reveal" style="transition-delay: 0.1s;">
+                <!-- REPLACE WITH YOUR IMAGE -->
+                <img src="https://images.unsplash.com/photo-1522673607200-164883eeca48?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover" alt="Memory 2">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+            </div>
+
+            <!-- Small Detail Image -->
+            <div class="rounded-3xl img-container reveal" style="transition-delay: 0.2s;">
+                <!-- REPLACE WITH YOUR IMAGE -->
+                <img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover" alt="Memory 3">
+            </div>
+
+            <!-- Wide Image -->
+            <div class="md:col-span-1 rounded-3xl img-container reveal" style="transition-delay: 0.3s;">
+                <!-- REPLACE WITH YOUR IMAGE -->
+                <img src="https://images.unsplash.com/photo-1531747118685-ca8fa6e08806?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover" alt="Memory 4">
+            </div>
+
+            <!-- Bottom Wide Image -->
+            <div class="md:col-span-2 rounded-3xl img-container reveal" style="transition-delay: 0.4s;">
+                <!-- REPLACE WITH YOUR IMAGE -->
+                <img src="https://images.unsplash.com/photo-1511733331976-203291758427?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover" alt="Memory 5">
+                <div class="absolute top-6 left-6">
+                    <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[9px] uppercase tracking-widest">Travel Log 04</span>
+                </div>
+            </div>
+
+            <!-- Last Square -->
+            <div class="rounded-3xl glass-card flex items-center justify-center p-8 text-center reveal" style="transition-delay: 0.5s;">
+                <div>
+                    <i class="fa-solid fa-plus text-yellow-600 mb-4 text-xl"></i>
+                    <p class="text-[10px] uppercase tracking-[0.2em] text-gray-400">Thousands more saved in my heart.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HEARTFELT MESSAGE -->
+    <section class="min-h-screen flex items-center justify-center bg-white text-black px-6">
+        <div class="max-w-4xl w-full">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 reveal">
+                    <!-- REPLACE WITH A PHOTO OF THE TWO OF YOU -->
+                    <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover" alt="Our Portrait">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 reveal">
+                    <h2 class="text-xs uppercase tracking-[0.5em] text-gray-400 mb-6">The Personal Note</h2>
+                    <h3 class="text-4xl font-black mb-6 leading-tight font-outfit uppercase">
+                        I'd do it all over again in a <span class="text-yellow-600">heartbeat.</span>
+                    </h3>
+                    <div class="space-y-4 text-gray-600 leading-relaxed text-sm md:text-base">
+                        <p>To my partner, my best friend, and my biggest supporter—Happy 2nd Anniversary.</p>
+                        <p>In two years, we’ve built something that most people spend a lifetime looking for. You make the hard days easier and the good days legendary.</p>
+                        <p>Thank you for being the man you are. Here’s to us, to our future, and to never settling for anything less than extraordinary.</p>
+                        <p class="font-bold text-black mt-8 text-lg">— Your Girl</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA / FOOTER -->
+    <footer class="py-32 text-center relative overflow-hidden">
+        <div class="reveal relative z-10">
+            <h2 class="text-6xl md:text-8xl font-black opacity-10 mb-8 uppercase">Forever</h2>
+            <button onclick="triggerCelebration()" class="px-12 py-5 bg-yellow-600 text-black font-bold text-[10px] tracking-[0.4em] uppercase hover:bg-white transition-all duration-300">
+                Seal with a Click
+            </button>
+        </div>
+        <div class="mt-24 opacity-30 text-[9px] tracking-[0.5em] uppercase">
+            Developed for Year Two & Beyond
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Intersection Observer for Reveal Animations
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Progress Bar Logic
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress").style.width = scrolled + "%";
+        };
+
+        // Confetti Celebration
+        function triggerCelebration() {
+            var count = 200;
+            var defaults = { origin: { y: 0.7 }, colors: ['#C5A028', '#ffffff', '#000000'] };
+
+            function fire(particleRatio, opts) {
+                confetti(Object.assign({}, defaults, opts, {
+                    particleCount: Math.floor(count * particleRatio)
+                }));
+            }
+
+            fire(0.25, { spread: 26, startVelocity: 55 });
+            fire(0.2, { spread: 60 });
+            fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+            fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+            fire(0.1, { spread: 120, startVelocity: 45 });
+        }
+    </script>
+</body>
+</html>
